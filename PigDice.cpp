@@ -2,6 +2,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <random>
+#include "DIE.h"
 
 // Build your solution starting from this code
 
@@ -14,45 +15,7 @@ struct GameState {
     bool game_over = false;
     bool turn_over = false;
 };
-class Die {
-private:
-    int m_value;
-    int m_numberOfSides;
-public:
-    Die() {
-        m_numberOfSides = 6;
-        setValue();
-    }
 
-    void set_numOfSides(int numOfSides) {
-        switch (numOfSides) {
-            case 4:
-                m_numberOfSides = 4;
-                break;
-            case 6:
-                m_numberOfSides = 6;
-                break;
-            case 8:
-                m_numberOfSides = 8;
-                break;
-            default:
-                m_numberOfSides = 6;
-        }
-    }
-int getNumOfSides() {
-        return m_numberOfSides;
-    }
-
-    void setValue() {
-        std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_int_distribution<> dist(1, m_numberOfSides);
-        m_value = dist(gen);
-    }
-    int getValue() {
-        return m_value;
-    }
-};
 
 
 
