@@ -1,36 +1,21 @@
 #include "DIE.h"
 
 Die::Die() {
-    m_numberOfSides = 6;
-    setValue();
+    m_dieValue=0;
 }
 
-void Die::set_numOfSides(int numOfSides) {
-    switch (numOfSides) {
-        case 4:
-            m_numberOfSides = 4;
-            break;
-        case 6:
-            m_numberOfSides = 6;
-            break;
-        case 8:
-            m_numberOfSides = 8;
-            break;
-        default:
-            m_numberOfSides = 6;
-    }
-}
-int Die::getNumOfSides() {
-    return m_numberOfSides;
-}
 
-void Die::setValue() {
+
+
+
+void Die::rollDie() {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dist(1, m_numberOfSides);
-    m_value = dist(gen);
+    std::uniform_int_distribution<int> dis(1, 6);
+    m_dieValue = dis(gen);
 }
-int Die::getValue() {
-    return m_value;
+int Die::getDieValue() const {
+    // rules for accessing the data
+    return m_dieValue;
 }
 #include "DIE.h"
