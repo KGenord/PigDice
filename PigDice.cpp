@@ -1,7 +1,10 @@
-#include "PDGame.h"
+#include "MultiPlayerGame.h"
+#include <iostream>
+using namespace std;
 
 int main() {
-    PDGame game;
+    MultiPlayer game("Pig Dice Multiplayer");
+    game.mpPlayGame();
     return 0;
 }
 

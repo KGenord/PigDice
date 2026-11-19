@@ -6,8 +6,7 @@ PDGame::PDGame() {
     m_gamOver = false;
     m_gameScore = 0;
     m_myTurn.setParentGame(this); // 7.
-    displayRules();
-    playGame();
+
 }
 int PDGame::gameScore() const {
     return m_gameScore; // 2.
